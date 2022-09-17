@@ -10,6 +10,18 @@ const munchSound = new Audio("munch-sound.mp3");
 var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 
+const grd = ctx.createLinearGradient(0.000, 150.000, 300.000, 150.000);
+        
+// Add colors
+grd.addColorStop(0.000, 'rgba(247, 149, 51, 1.000)');
+grd.addColorStop(0.151, 'rgba(243, 112, 85, 1.000)');
+grd.addColorStop(0.311, 'rgba(239, 78, 123, 1.000)');
+grd.addColorStop(0.462, 'rgba(161, 102, 171, 1.000)');
+grd.addColorStop(0.621, 'rgba(80, 115, 184, 1.000)');
+grd.addColorStop(0.748, 'rgba(16, 152, 173, 1.000)');
+grd.addColorStop(0.875, 'rgba(7, 179, 155, 1.000)');
+grd.addColorStop(1.000, 'rgba(111, 186, 130, 1.000)');
+
 export class Game{
     constructor(_snake, _apple){
         this.score = 0;
@@ -19,12 +31,16 @@ export class Game{
     }
 
     drawApple(){
-        ctx.fillStyle = "red";
+        ctx.fillStyle = grd;
         ctx.fillRect(this.apple.x * tileCount, this.apple.y * tileCount, tileSize, tileSize);
     }
 
     drawSnake(){
-        ctx.fillStyle = "blue";
+        // Create gradient
+        
+        ctx.fillStyle = grd;
+
+
         for (let i = 0; i < this.snake.snakeParts.length; i++){
             let part = this.snake.snakeParts[i];
             ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
@@ -37,7 +53,6 @@ export class Game{
             this.snake.snakeParts.shift(); // remove farthest part
         }
     
-        ctx.fillStyle = "blue";
         ctx.fillRect(this.snake.headX * tileCount, this.snake.headY * tileCount, tileSize, tileSize);
     }
 
@@ -64,7 +79,7 @@ export class Game{
     
     // make background of game black 
     blackScreen(){
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "#1C1D24";
         // default canvas size 400 x 400 
         ctx.fillRect(0,0, canvas.width, canvas.height);
     }

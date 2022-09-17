@@ -44,7 +44,7 @@ function drawGame(){
     }
 
     game.blackScreen();
-    game.checkCollsion();   
+    game.checkCollsion();
     game.drawApple();
     game.drawSnake();
     game.drawScore();
