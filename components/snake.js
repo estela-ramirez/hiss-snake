@@ -8,7 +8,17 @@ export class Snake{
         this.headY = _headY;
         this.tailLength = _tailLength;
         this.speed = _speed;
+        this.hurt = false;
         this.snakeParts = [];
+    }
+
+    isHurt(){
+        console.log("getting");
+        return this.hurt;
+    }
+
+    updateIsHurt(hurtOrNot){
+        this.hurt = hurtOrNot
     }
 
     updateSpeed(newSpeed){

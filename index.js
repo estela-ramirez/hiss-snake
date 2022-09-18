@@ -1,11 +1,11 @@
-import {Snake} from './snake.js';
-import {Apple} from './apple.js';
-import {Game} from '/game.js';
+import {Snake} from './components/snake.js';
+import {Apple} from './components/apple.js';
+import {Game} from './components/game.js';
 
-const munchSound = new Audio("munch-sound.mp3");
-const hurtSound = new Audio("hurt.wav");
+const munchSound = new Audio("audio/munch-sound.mp3");
+const hurtSound = new Audio("audio/hurt.wav");
 
-let snake = new Snake(10,10,2,7);
+let snake = new Snake(10,10,2,5);
 let apple = new Apple(5,5, true, munchSound);
 let badApple = new Apple(15,15, false, hurtSound);
 

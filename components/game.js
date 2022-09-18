@@ -55,8 +55,13 @@ export class Game{
     drawSnake(){
         // Create gradient
         
-        ctx.fillStyle = grd;
-
+        if (this.snake.isHurt()){
+            console.log("yes");
+            ctx.fillStyle = "yellow";
+        }else{
+            ctx.fillStyle = grd;
+        }
+        
 
         for (let i = 0; i < this.snake.snakeParts.length; i++){
             let part = this.snake.snakeParts[i];
@@ -74,10 +79,13 @@ export class Game{
     }
 
     monitorScore(){
-        if (this.score > 2){
-            this.snake.updateSpeed(11);
+        if (this.score > 3){
+            this.snake.updateSpeed(7);
         }
         if (this.score > 5){
+            this.snake.updateSpeed(11);
+        }
+        if (this.score > 9){
             this.snake.updateSpeed(15);
         }
     }
@@ -112,7 +120,7 @@ export class Game{
                 this.score++; 
             }else{
                 this.generateNewXAndY(this.badApple, this.apple);
-
+                this.snake.updateIsHurt(true);
                 // penalize score for eating bad apple
                 this.score = this.score - 5;
                 if (this.score < 0) {
