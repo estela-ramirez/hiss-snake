@@ -11,6 +11,10 @@ export class Snake{
         this.snakeParts = [];
     }
 
+    updateSpeed(newSpeed){
+        this.speed = newSpeed;
+    }
+
     updateSnakePosition(){
         this.headX += this.xDirection;
         this.headY += this.yDirection;
