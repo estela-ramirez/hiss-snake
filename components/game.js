@@ -54,14 +54,7 @@ export class Game{
 
     drawSnake(){
         // Create gradient
-        
-        if (this.snake.isHurt()){
-            console.log("yes");
-            ctx.fillStyle = "yellow";
-        }else{
-            ctx.fillStyle = grd;
-        }
-        
+        ctx.fillStyle = grd;
 
         for (let i = 0; i < this.snake.snakeParts.length; i++){
             let part = this.snake.snakeParts[i];
