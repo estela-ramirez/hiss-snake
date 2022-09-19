@@ -7,7 +7,7 @@
 ### :camera: Screenshots
 
 <div align="center">
- <img src="screenshots/game.jpg" alt="" width="400"/>
+ <img src="images/game.png" alt="" width="400"/>
 </div>
 
 <!-- TechStack -->
