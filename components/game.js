@@ -117,7 +117,8 @@ export class Game{
                 // penalize score for eating bad apple
                 this.score = this.score - 5;
                 if (this.score < 0) {
-                    this.score = 0;
+                    this.score  = 0;
+                    this.gameIsOver = true;  
                 }
             }
 
