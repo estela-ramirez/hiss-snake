@@ -1,11 +1,15 @@
-import {Snake} from './snake.js';
-import {Apple} from './apple.js';
-import {Game} from '/game.js';
+import {Snake} from './components/snake.js';
+import {Apple} from './components/apple.js';
+import {Game} from './components/game.js';
 
+const munchSound = new Audio("audio/munch-sound.mp3");
+const hurtSound = new Audio("audio/hurt.wav");
 
-let snake = new Snake(10,10,2,7);
-let apple = new Apple(5,5);
-let game = new Game(snake, apple);
+let snake = new Snake(10,10,2,5);
+let apple = new Apple(5,5, true, munchSound);
+let badApple = new Apple(15,15, false, hurtSound);
+
+let game = new Game(snake, apple, badApple);
 
 // event listener to listen to when arrow keys are pressed
 document.body.addEventListener("keydown", keyDown);
@@ -32,29 +36,29 @@ function keyDown(event){
     }
 }
 
-
 function drawGame(){
     snake.updateSnakePosition();
 
+    // want to do this before drawing snake to keep snake head in bounds
     game.checkGameStatus();
-    
     if (game.gameIsOver){
         game.displayGameOverMessage("Game Over!");
         return;
     }
 
     game.blackScreen();
-    game.checkCollsion();   
-    game.drawApple();
-    game.drawSnake();
-    game.drawScore();
-
     
-    if (game.score > 2){
-        snake.speed = 11;
-    }
-    if (game.score > 5){
-        snake.speed = 15;
+    if (game.gameStarted == false){
+        game.showInstructions();
+        game.drawApples();
+        game.drawSnake();
+        game.drawScore();
+    }else{
+        game.checkCollsions();
+        game.drawApples();
+        game.drawSnake();
+        game.drawScore();
+        game.monitorScore();
     }
 
     setTimeout(drawGame, 1000/snake.speed);
