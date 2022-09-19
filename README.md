@@ -1,14 +1,3 @@
-<!-- Table of Contents -->
-# Table of Contents
-- [About the Project](#star2-about-the-project)
-  * [Screenshots](#camera-screenshots)
-  * [Tech Stack](#space_invader-tech-stack)
-- [Getting Started](#toolbox-getting-started)
-  * [Prerequisites](#bangbang-prerequisites)
-  * [Run Locally](#running-run-locally)
-- [Acknowledgements](#raised_hands-acknowledgements)
-
-
 <!-- About the Project -->
 ## :star2: About the Project
 <p>Throwback to the Snake Game. It has the orginal snake rules, however, there is a "bad apple". If the snake eats the bad apple, the score will be decremented by 5.</p>
@@ -18,15 +7,8 @@
 ### :camera: Screenshots
 
 <div align="center">
- <img src="screenshots/table.jpg" alt="" width="400"/>
- <img src="screenshots/map.jpg" alt="" width="400"/>
+ <img src="screenshots/game.jpg" alt="" width="400"/>
 </div>
-
-<div align="center">
- <img src="screenshots/bar.jpg" alt="" width="400"/>
- <img src="screenshots/line.jpg" alt="" width="400"/>
-</div>
-
 
 <!-- TechStack -->
 ### :space_invader: Tech Stack
