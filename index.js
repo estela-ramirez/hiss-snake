@@ -43,7 +43,7 @@ function drawGame(){
     game.checkGameStatus();
     if (game.gameIsOver){
         game.displayGameOverMessage("Game Over!");
-        location.reload();
+        return;
     }
 
     game.blackScreen();
